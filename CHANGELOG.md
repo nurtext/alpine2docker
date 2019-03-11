@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 11/03/2019 (1.7.0)
+
+- Upgrade Alpine Linux to 3.9.2
+- Upgrade Docker to 18.09.1-ce
+- Upgrade docker-compose to 1.23.2
+- Add VirtualBox Guest Additions
+
 ## 13/01/2019 (1.6.2)
 
 - Upgrade to Alpine Linux 3.8.2

@@ -19,15 +19,15 @@ $ vagrant up
 * LVM root filesystem for any filesystem growing allocation
 * 1 Gb swap enabled
 * Default to NAT network
-* Default to 2 vCPUs and 4 Gb memory
+* Default to 2 vCPUs and 2 Gb memory
 * OpenSSH server
 * Bash, curl, sudo, rsync
 * Administrative user *alpine* (password is the same)
 * Docker Engine
 * Docker Compose
 * Docker Bash Completion
+* Virtual Box Guest Additions (e.g. for shared filesystems)
 * *NOT in the box:*
-  - No VirtualBox addition (meaning: no shared filesystem with the host by default, unless using rsync)
   - No USB
   - No Audio
 

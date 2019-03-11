@@ -12,7 +12,10 @@ echo "${CURRENT_REPO}" | sed 's/main/community/g' | tee -a /etc/apk/repositories
 apk upgrade -U --available --no-cache
 
 # Install base packages
-apk --no-cache add curl bash bash-completion rsync
+apk --no-cache add curl bash bash-completion rsync virtualbox-guest-additions virtualbox-guest-modules-virt
+
+# Load VirtualBox kernel module for shared folders
+modprobe vboxsf
 
 # Configure root to use bash
 sed -i 's#/ash#/bash#g' /etc/passwd
