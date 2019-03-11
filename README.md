@@ -6,16 +6,16 @@ If you work solely with Docker, this box lets you keep your Vagrant workflow and
 
 ## Usage
 
-The box is available on [Hashicorp's Atlas](https://atlas.hashicorp.com/dduportal/boxes/alpinedocker), making it very easy to use it:
+The box is available on [Hashicorp's Atlas](https://atlas.hashicorp.com/nurtext/boxes/alpine2docker), making it very easy to use it:
 
 ```
-$ vagrant init dduportal/alpine2docker
+$ vagrant init nurtext/alpine2docker
 $ vagrant up
 ```
 
-## [What's in the box ?](https://www.youtube.com/watch?v=1giVzxyoclE)
+## [What's in the box?](https://www.youtube.com/watch?v=1giVzxyoclE)
 
-* Guest OS: Alpine Linux 3.6
+* Guest OS: Alpine Linux 3.9
 * LVM root filesystem for any filesystem growing allocation
 * 1 Gb swap enabled
 * Default to NAT network
