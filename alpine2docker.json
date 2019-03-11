@@ -33,8 +33,8 @@
         "ifconfig eth0 up && udhcpc -i eth0<enter><wait>",
         "wget -O /tmp/answers http://{{ .HTTPIP }}:{{ .HTTPPort }}/answers<enter><wait>",
         "setup-alpine -f /tmp/answers<enter><wait5>",
-        "root<enter><wait>",
-        "root<enter><wait>",
+        "alpine<enter><wait>",
+        "alpine<enter><wait>",
         "<wait10><wait10>",
         "y<enter>",
         "<wait10><wait10>",
@@ -49,7 +49,7 @@
       "guest_additions_mode": "disable",
       "virtualbox_version_file": ".vbox_version",
       "ssh_username": "root",
-      "ssh_password": "root",
+      "ssh_password": "alpine",
       "ssh_wait_timeout": "10m",
       "shutdown_command": "/sbin/poweroff"
     }
@@ -91,7 +91,7 @@
     {
       "type": "vagrant",
       "only": ["vbox"],
-      "vagrantfile_template": "vagrantfile-box.tpl",
+      "vagrantfile_template": "Vagrantfile.tpl",
       "output": "{{user `BOX_FILE`}}"
     }
   ]

@@ -19,6 +19,9 @@ addgroup "${BASE_USER}" docker
 service docker start
 rc-update add docker boot
 
+# Enable both TCP and Unix socket for Docker daemon
+sed -i 's|command="${DOCKERD_BINARY:-/usr/bin/dockerd}"|DOCKER_OPTS="-H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375"\ncommand="${DOCKERD_BINARY:-/usr/bin/dockerd}"|' /etc/init.d/docker
+
 ### Install Docker-compose
 pip install --no-cache-dir --upgrade pip
 pip install --no-cache-dir "docker-compose"

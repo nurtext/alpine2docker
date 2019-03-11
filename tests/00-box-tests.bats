@@ -8,11 +8,11 @@ execute_vagrant_ssh_command() {
     vagrant ssh -c "${*}" -- -n -T
 }
 
-@test "We can start the VM with vagrant" {
+@test "We can start the VM with Vagrant" {
     vagrant up
 }
 
-@test "We can SSH inside the VM with vagrant" {
+@test "We can SSH inside the VM with Vagrant" {
     execute_vagrant_ssh_command "echo OK"
 }
 
@@ -20,7 +20,7 @@ execute_vagrant_ssh_command() {
     execute_vagrant_ssh_command "whoami" | grep "${BASE_USER}"
 }
 
-@test "Default shell of default user ${BASE_USER} is bash" {
+@test "Default shell for default user ${BASE_USER} is bash" {
     # Configured User shell
     execute_vagrant_ssh_command 'echo ${SHELL}' | grep '/bin/bash'
     # Effective shell
@@ -59,7 +59,7 @@ execute_vagrant_ssh_command() {
     execute_vagrant_ssh_command "which docker"
 }
 
-@test "Docker Compose is in the PATH and executable" {
+@test "docker-compose is in the PATH and executable" {
   execute_vagrant_ssh_command "which docker-compose && docker-compose -v"
 }
 
@@ -75,11 +75,27 @@ execute_vagrant_ssh_command() {
   execute_vagrant_ssh_command "docker run --rm -t maven:3-alpine java -version"
 }
 
-@test "We have a customize folder where default user can write inside" {
+@test "We have a customizable folder where the default user can write to" {
     execute_vagrant_ssh_command "[ -d /var/customize ] \
         && touch /var/customize/test"
 }
 
 @test "We have a shutdown command" {
     execute_vagrant_ssh_command "which shutdown" | grep '/sbin/shutdown'
+}
+
+@test "VirtualBox Guest Additions are installed" {
+    execute_vagrant_ssh_command "which VBoxControl" | grep '/usr/bin/VBoxControl'
+}
+
+@test "VirtualBox Kernel module is loaded" {
+    execute_vagrant_ssh_command "lsmod" | grep 'vboxguest'
+}
+
+@test "Docker Daemon has TCP socket enabled" {
+    execute_vagrant_ssh_command "sudo netstat -tlp" | grep 'dockerd' 
+}
+
+@test "Docker Daemon has Unix socket enabled" {
+    execute_vagrant_ssh_command "sudo netstat -lx" | grep 'docker.sock'
 }

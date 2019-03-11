@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 11/03/2019 (1.7.1)
+
+- Add more tests
+- Add TCP socket for Docker daemon
+- Change root password
+- Change Vagrantfile template filename
+- Fix VirtualBox Shared Filesystem Kernel Module
+
+Published on <https://app.vagrantup.com/nurtext/boxes/alpine2docker/versions/1.7.1>
+
 ## 11/03/2019 (1.7.0)
 
 - Upgrade Alpine Linux to 3.9.2

@@ -15,7 +15,7 @@ apk upgrade -U --available --no-cache
 apk --no-cache add curl bash bash-completion rsync virtualbox-guest-additions virtualbox-guest-modules-virt
 
 # Load VirtualBox kernel module for shared folders
-modprobe vboxsf
+modprobe vboxsf && echo vboxsf >> /etc/modules
 
 # Configure root to use bash
 sed -i 's#/ash#/bash#g' /etc/passwd

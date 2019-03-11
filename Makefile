@@ -1,6 +1,6 @@
-export BOX_VERSION ?= 1.7.0
-export VM_CPUS ?= 1
-export VM_MEMORY ?= 1024
+export BOX_VERSION ?= 1.7.1
+export VM_CPUS ?= 4
+export VM_MEMORY ?= 4096
 BOX_BASENAME ?= alpine2docker
 BOX_NAME ?= $(BOX_BASENAME)-$(BOX_VERSION)
 export BOX_FILE ?= $(BOX_NAME).box
