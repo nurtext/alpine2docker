@@ -6,7 +6,7 @@ If you work solely with Docker, this box lets you keep your Vagrant workflow and
 
 ## Usage
 
-The box is available on [Hashicorp's Atlas](https://app.vagrantup.com/nurtext/boxes/alpine2docker), making it very easy to use it:
+The box is available on [Hashicorp's Vagrant Cloud](https://app.vagrantup.com/nurtext/boxes/alpine2docker), making it very easy to use it:
 
 ```
 $ vagrant init nurtext/alpine2docker
