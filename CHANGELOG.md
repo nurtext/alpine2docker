@@ -7,7 +7,7 @@
 - Upgrade docker-compose to 1.23.2
 - Add VirtualBox Guest Additions
 
-Published on <https://atlas.hashicorp.com/nurtext/boxes/alpine2docker/versions/1.7.0>
+Published on <https://app.vagrantup.com/nurtext/boxes/alpine2docker/versions/1.7.0>
 
 ## 13/01/2019 (1.6.2)
 
